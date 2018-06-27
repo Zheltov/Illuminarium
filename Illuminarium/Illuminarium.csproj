@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7AE6C3D-C4F3-431D-B878-9F79EC06858B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Illuminarium</RootNamespace>
+    <AssemblyName>Illuminarium</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\..\Lib\ZedGraph\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRenderLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRenderLog.Designer.cs">
+      <DependentUpon>FormRenderLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRenderResultView .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRenderResultView .Designer.cs">
+      <DependentUpon>FormRenderResultView .cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSceneView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSceneView.Designer.cs">
+      <DependentUpon>FormSceneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ISceneCreator.cs" />
+    <Compile Include="TestScenes\SceneCreatorCornellBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestScenes\SceneCreatorCube.cs" />
+    <Compile Include="TestScenes\SceneCreatorDubrovnikSponza.cs" />
+    <Compile Include="TestScenes\SceneCreatorRoom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestScenes\SceneCreatorSobolevEx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestScenes\SceneCreatorSphere.cs" />
+    <Compile Include="UI.Controls\OpenGL.cs" />
+    <Compile Include="UI.Controls\OpenGLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI.Controls\OpenGLView.Designer.cs">
+      <DependentUpon>OpenGLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI.Controls\OpenGLViewScene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI.Controls\OpenGLViewScene.Designer.cs">
+      <DependentUpon>OpenGLViewScene.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRenderLog.resx">
+      <DependentUpon>FormRenderLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRenderResultView .resx">
+      <DependentUpon>FormRenderResultView .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSceneView.resx">
+      <DependentUpon>FormSceneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI.Controls\OpenGLView.resx">
+      <DependentUpon>OpenGLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI.Controls\OpenGLViewScene.resx">
+      <DependentUpon>OpenGLViewScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TestScenes\3ds\2PlaneWithTable.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScenes\3ds\cornellbox.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScenes\3ds\cube.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScenes\3ds\Room with box 3.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScenes\3ds\room-table.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScenes\3ds\sobolevex.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScenes\3ds\sphere.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestScenes\3ds\sponza.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Embree\Embree.csproj">
+      <Project>{0a19397d-7a90-454a-948c-32a03f3c7629}</Project>
+      <Name>Embree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illuminarium.Core.RayTracer.Embree\Illuminarium.Core.RayTracer.Embree.csproj">
+      <Project>{22500cb3-7d07-462e-ad9b-a0da599e0335}</Project>
+      <Name>Illuminarium.Core.RayTracer.Embree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illuminarium.Core\Illuminarium.Core.csproj">
+      <Project>{efa4986c-8ae6-4ad2-afa2-e29853cd1937}</Project>
+      <Name>Illuminarium.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illuminarium.Graph\Illuminarium.Graph.csproj">
+      <Project>{4e6380cb-047b-4a18-a607-5cbcedafe052}</Project>
+      <Name>Illuminarium.Graph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illuminarium.IO\Illuminarium.IO.csproj">
+      <Project>{0474e9d7-99d9-44ef-b872-76010825a80a}</Project>
+      <Name>Illuminarium.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SphericalHarmonics\SphericalHarmonics.csproj">
+      <Project>{6383fe3b-f578-4805-8335-f79d897eb15b}</Project>
+      <Name>SphericalHarmonics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

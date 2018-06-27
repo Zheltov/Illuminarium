@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EFA4986C-8AE6-4AD2-AFA2-E29853CD1937}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Illuminarium.Core</RootNamespace>
+    <AssemblyName>Illuminarium.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="alglibnet2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AlgLib\alglibnet2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Debug\RayDebug.cs" />
+    <Compile Include="Debug\RayDebugStaticCollection.cs" />
+    <Compile Include="GlobalIllumination\Core\CalculationPointDLE.cs" />
+    <Compile Include="GlobalIllumination\Core\DoubleLocalEstimationCalculator.cs" />
+    <Compile Include="GlobalIllumination\DoubleLocalEstimation.cs" />
+    <Compile Include="GlobalIllumination\RenderPointsStructureDLE.cs" />
+    <Compile Include="GlobalIllumination\TriangleFaceDLE.cs" />
+    <Compile Include="GlobalIllumination\TriangleVertexDLE.cs" />
+    <Compile Include="IFace.cs" />
+    <Compile Include="IGlobalIllumination.cs" />
+    <Compile Include="ILight.cs" />
+    <Compile Include="ILog.cs" />
+    <Compile Include="Materials\IMaterial.cs" />
+    <Compile Include="Materials\Impl\MirrorMaterial.cs" />
+    <Compile Include="Materials\IReflectanceMaterial.cs" />
+    <Compile Include="Materials\IMirrorMaterial.cs" />
+    <Compile Include="Intersection.cs" />
+    <Compile Include="IObj.cs" />
+    <Compile Include="IRayTracer.cs" />
+    <Compile Include="IRenderer.cs" />
+    <Compile Include="Lights\LightBase.cs" />
+    <Compile Include="Lights\RectangleLight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lights\RectangleLightFakeForSobolev.cs" />
+    <Compile Include="Materials\Impl\DiffuseReflectanceMaterial.cs" />
+    <Compile Include="Cameras\Camera.cs" />
+    <Compile Include="Materials\Impl\PhongReflectanceMaterial.cs" />
+    <Compile Include="ICamera.cs" />
+    <Compile Include="Materials\Material.cs" />
+    <Compile Include="Math3D.cs" />
+    <Compile Include="MeshTransform\AngleFunc.cs" />
+    <Compile Include="MeshTransform\MeshTransform.cs" />
+    <Compile Include="MeshViewIndependent\MeshSettings.cs" />
+    <Compile Include="MeshViewIndependent\Objects\MSpectrumAngles.cs" />
+    <Compile Include="MeshViewIndependent\Objects\MVertex.cs" />
+    <Compile Include="MeshViewIndependent\MScene.cs" />
+    <Compile Include="MeshViewIndependent\Objects\MFaceIlluminanceAngles.cs" />
+    <Compile Include="MeshViewIndependent\Renderer\MRenderDirectLight.cs" />
+    <Compile Include="MeshViewIndependent\Renderer\MRenderDoubleLocalEst.cs" />
+    <Compile Include="Objects\Obj.cs" />
+    <Compile Include="Objects\Ray.cs" />
+    <Compile Include="Objects\Face.cs" />
+    <Compile Include="SpecturmOld.cs" />
+    <Compile Include="Specturm.cs" />
+    <Compile Include="MeshViewIndependent\Objects\MFace.cs" />
+    <Compile Include="Lights\PointLight.cs" />
+    <Compile Include="MeshViewIndependent\Objects\MObj.cs" />
+    <Compile Include="Objects\Point3D.cs" />
+    <Compile Include="Objects\Vector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderPoint.cs" />
+    <Compile Include="RenderPointsStructure.cs" />
+    <Compile Include="RenderResult.cs" />
+    <Compile Include="Scene.cs" />
+    <Compile Include="Renderers\SimpleRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Embree\Embree.csproj">
+      <Project>{0a19397d-7a90-454a-948c-32a03f3c7629}</Project>
+      <Name>Embree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SphericalHarmonics\SphericalHarmonics.csproj">
+      <Project>{6383fe3b-f578-4805-8335-f79d897eb15b}</Project>
+      <Name>SphericalHarmonics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
