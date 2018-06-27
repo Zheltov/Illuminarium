@@ -53,6 +53,6 @@ float wMin = 0.1f;      // Минимульный вес луча марковс
 ![][img02]
 ![][img03]
 
-[img01]: https://github.com/Zheltov/Illuminarium/tree/master/Images/01.png
-[img02]: https://github.com/Zheltov/Illuminarium/tree/master/Images/vi_01.png
-[img03]: https://github.com/Zheltov/Illuminarium/tree/master/Images/vi_02.png
+[img01]: https://github.com/Zheltov/Illuminarium/blob/master/Images/01.png
+[img02]: https://github.com/Zheltov/Illuminarium/blob/master/Images/vi_01.png
+[img03]: https://github.com/Zheltov/Illuminarium/blob/master/Images/vi_02.png
