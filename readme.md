@@ -33,7 +33,7 @@ float wMin = 0.1f;      // Минимульный вес луча марковс
 ```
 
 ## Зависимости:
-Все включено в проект, но используются:
+Все включено в проект:
 - Embree
 - https://github.com/TomCrypto/Embree.NET
 - http://www.alglib.net/
